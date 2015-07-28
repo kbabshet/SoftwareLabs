@@ -1,0 +1,17 @@
+[{
+  "directory": "/home/ari/development/SoftwareLabs/Complex",
+  "command": "/usr/bin/g++ --std=gnu++14 -Wall -g -O0 -Wall -I. -I. -MG -MP -MT./Debug/quadratic.cpp.o -MF./Debug/quadratic.cpp.o.d -MM quadratic.cpp",
+  "file": "/home/ari/development/SoftwareLabs/Complex/quadratic.cpp"
+ }, {
+  "directory": "/home/ari/development/SoftwareLabs/Complex",
+  "command": "/usr/bin/g++ --std=gnu++14 -Wall -g -O0 -Wall -I. -I. -MG -MP -MT./Debug/complex.cpp.o -MF./Debug/complex.cpp.o.d -MM complex.cpp",
+  "file": "/home/ari/development/SoftwareLabs/Complex/complex.cpp"
+ }, {
+  "directory": "/home/ari/development/SoftwareLabs/Complex",
+  "command": "/usr/bin/g++ --std=gnu++14 -Wall -c /home/ari/development/SoftwareLabs/Complex/quadratic.cpp -g -O0 -Wall -o ./Debug/quadratic.cpp.o -I. -I.",
+  "file": "/home/ari/development/SoftwareLabs/Complex/quadratic.cpp"
+ }, {
+  "directory": "/home/ari/development/SoftwareLabs/Complex",
+  "command": "/usr/bin/g++ --std=gnu++14 -Wall -c /home/ari/development/SoftwareLabs/Complex/complex.cpp -g -O0 -Wall -o ./Debug/complex.cpp.o -I. -I.",
+  "file": "/home/ari/development/SoftwareLabs/Complex/complex.cpp"
+ }]
