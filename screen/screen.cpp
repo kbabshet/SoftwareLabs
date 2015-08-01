@@ -38,7 +38,13 @@ void Screen::up()
 {   // move _cursor up one row of screen
 	// do not wrap around
 	if ( row() == 1 ) // at top?
-		cerr << "Screen::up - Cannot wrap around in a vertical direction" << endl;
+    {
+		for (int i = 1; i<= (height() -1); i++)
+        {
+            Screen::down();
+        }
+        Screen::back();
+    }
 	else
 		_cursor -= _width;
 
@@ -49,7 +55,14 @@ void Screen::down()
 {   // move _cursor down one row of screen
 	// do not wrap around
 	if ( row() == _height ) // at bottom?
-		cerr << "Screen::down - Cannot wrap around in a vertical direction" << endl;
+    {
+		for (int i = 1; i<= (height() - 1); i++)
+        {
+            Screen::up();
+        }
+        Screen::forward();
+        
+    }
 	else
 		_cursor += _width;
 
@@ -67,6 +80,37 @@ void Screen::move( string::size_type row, string::size_type col )
 	}
 
 	return;
+}
+
+void Screen::move(Direction dir)
+{
+    switch(dir)
+    {
+        case Direction::Forward:
+            forward();
+            break;
+        
+        case Direction::Back:
+            back();
+            break;
+            
+        case Direction::Up:
+            up();
+            break;
+        
+        case Direction::Down:
+            down();
+            break;
+            
+        case Direction::Home:
+            home();
+            break;
+            
+        case Direction::End:
+            end();
+            break;
+    }
+    
 }
 
 char Screen::get( string::size_type row, string::size_type col )
