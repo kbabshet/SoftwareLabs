@@ -1,6 +1,7 @@
-*/Debug/
-*/Makefile
-*/*.mk
+**/Debug/
+**/Makefile
+**/*.mk
+Makefile
 .codelite/
 
 .ycm_extra_conf.pyc

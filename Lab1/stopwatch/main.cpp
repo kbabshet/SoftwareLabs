@@ -9,10 +9,10 @@ int main()
 
     cout << "Starting..." << endl;
     sw.start();
-    for (int i = 0; i < 90000000; i++)
+    for (int i = 0; i < 99000000; i++)
     {
         double a, b = 2323.23;
-        double c = (a*a*a*a*b);
+        double c = (a*b*b*a*a*a*b);
         a = c;
     }
     double seconds = sw.stop();
