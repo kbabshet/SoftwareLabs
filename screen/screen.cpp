@@ -38,7 +38,13 @@ void Screen::up()
 {   // move _cursor up one row of screen
 	// do not wrap around
 	if ( row() == 1 ) // at top?
-		cerr << "Screen::up - Cannot wrap around in a vertical direction" << endl;
+    {
+		for (int i = 1; i<= (height() -1); i++)
+        {
+            Screen::down();
+        }
+        Screen::back();
+    }
 	else
 		_cursor -= _width;
 
@@ -49,7 +55,14 @@ void Screen::down()
 {   // move _cursor down one row of screen
 	// do not wrap around
 	if ( row() == _height ) // at bottom?
-		cerr << "Screen::down - Cannot wrap around in a vertical direction" << endl;
+    {
+		for (int i = 1; i<= (height() - 1); i++)
+        {
+            Screen::up();
+        }
+        Screen::forward();
+        
+    }
 	else
 		_cursor += _width;
 
@@ -68,6 +81,38 @@ void Screen::move( string::size_type row, string::size_type col )
 
 	return;
 }
+
+void Screen::move(Direction dir)
+{
+    switch(dir)
+    {
+        case Direction::Forward:
+            forward();
+            break;
+        
+        case Direction::Back:
+            back();
+            break;
+            
+        case Direction::Up:
+            up();
+            break;
+        
+        case Direction::Down:
+            down();
+            break;
+            
+        case Direction::Home:
+            home();
+            break;
+            
+        case Direction::End:
+            end();
+            break;
+    }
+    
+}
+
 
 char Screen::get( string::size_type row, string::size_type col )
 {
@@ -159,41 +204,6 @@ void Screen::display() const
 	return;
 }
 
-void Screen::drawSquare(string::size_type row, string::size_type col, string::size_type length)
-{
-    if (!checkRange(row, col)) {
-        // out of bounds, checkRange already prints an error
-        return;
-    }
-
-    move(row, col);
-
-    if (row + length - 1 > _height || col + length - 1 > _width) {
-        cerr << "Square is too large to fit on the screen." << endl;
-        return;
-    }
-
-    // square will fit, now draw it
-    // make a string which will be reused as each row
-    string blank_row {};
-    for (string::size_type i = 0; i < length; i++) {
-        blank_row += " ";
-    }
-
-    for (string::size_type i = 0; i < length; i++) {
-        set(blank_row);
-
-        if (i == length - 1) {
-            // don't move to next row on the last iteration (entire square is
-            // already drawn by this point)
-            break;
-        }
-
-        // next row
-        move(row + i + 1, col);
-    }
-}
-
 bool Screen::checkRange( string::size_type row, string::size_type col ) const
 {   // validate coordinates
 	if (row < 1 || row > _height || col < 1 || col > _width)
@@ -214,4 +224,3 @@ string::size_type Screen::row() const
 {   // return current row
 	return (_cursor + _width)/_width;
 }
-
