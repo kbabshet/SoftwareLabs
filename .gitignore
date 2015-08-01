@@ -2,3 +2,5 @@
 */Makefile
 */*.mk
 .codelite/
+
+.ycm_extra_conf.pyc
