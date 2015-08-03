@@ -212,7 +212,7 @@ void Screen::drawSquare(string::size_type row, string::size_type col, string::si
 
     move(row, col);
 
-    if (row + length - 1 > _height || col + length - 1 > _width) {
+    if (row + length - 1 > height() || col + length - 1 > width()) {
         cerr << "Square is too large to fit on the screen." << endl;
         return;
     }
