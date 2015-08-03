@@ -1,0 +1,18 @@
+3) The ++ operator is not defined for complex numbers. Would it increment the imaginary or real part?
+
+4.2)
+    1) Defines TOP_LEFT as a constant variable
+    2) set() function: says function won't modify string s, passing by reference avoids making a copy
+    3) display(): function will only access member variables of Screen class, it won't change them
+
+    string.at returns a reference to the char at the given position. It is being used to set the char.
+
+
+4.5)
+    The function can be implemented using only public methods of the Screen class, meaning access to the internal representation is not required.
+    No, it is not part of Screen's responsibilities. drawSquare is arbitrary so Screen cannot be expected to implement it. Also it can be implemented externally with the public interface.
+
+4.6) The public interface should be consistent so that users' code that uses the interface will not break unexpectedly. Also if the inteface is consistent, the users will only have to learn the interface once.
+
+    Changing the implementation will not directly affect the user since the interface is consistent. The behaviour of the class should remain the same from the user's point of view, even though the way the class works can change.
+
