@@ -1,7 +1,9 @@
 **/Debug/
 **/Makefile
 **/*.mk
+**/submit
 Makefile
 .codelite/
 
 .ycm_extra_conf.pyc
+**/*.zip
