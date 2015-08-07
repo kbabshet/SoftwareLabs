@@ -7,3 +7,6 @@ Makefile
 
 .ycm_extra_conf.pyc
 **/*.zip
+
+gtest/lib/
+gtest/include/
