@@ -10,3 +10,4 @@ Makefile
 
 gtest/lib/
 gtest/include/
+googletest/
