@@ -2,6 +2,7 @@
 **/Makefile
 **/*.mk
 **/submit
+**/build/
 Makefile
 .codelite/
 
