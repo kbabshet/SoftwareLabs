@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Workspace Name="SoftwareLabs" Database="">
-  <Project Name="Complex" Path="Complex/Complex.project" Active="No"/>
-  <Project Name="stopwatch" Path="stopwatch/stopwatch.project" Active="Yes"/>
+<CodeLite_Workspace Name="SoftwareLabs" Database="" SWTLW="No">
+  <Project Name="stopwatch" Path="Lab1/stopwatch/stopwatch.project" Active="No"/>
+  <Project Name="test-code" Path="gtest/test-code/test-code.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="Complex" ConfigName="Debug"/>
       <Project Name="stopwatch" ConfigName="Debug"/>
+      <Project Name="stopwatch" ConfigName="Debug"/>
+      <Project Name="test-code" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="Complex" ConfigName="Release"/>
       <Project Name="stopwatch" ConfigName="Release"/>
+      <Project Name="stopwatch" ConfigName="Release"/>
+      <Project Name="test-code" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
+  <Environment>
+    <![CDATA[]]>
+  </Environment>
 </CodeLite_Workspace>
