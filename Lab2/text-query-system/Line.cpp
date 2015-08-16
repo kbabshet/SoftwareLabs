@@ -13,13 +13,17 @@ Line::Line(const string& line)
     
     string substring;
     while (iss >> substring) {
-        words.push_back(substring);
+        _words.push_back(substring);
     }
 }
 
 bool Line::contains(const Word& search_word) const
 {
-	for (auto word : words) {
+    if (!search_word.isQueryable()) {
+        return false;
+    }
+    
+	for (auto word : _words) {
         if (word == search_word) {
             return true;
         }

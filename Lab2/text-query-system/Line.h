@@ -17,7 +17,7 @@ public:
 	bool contains(const Word& search_word) const;
 
 private:		
-    vector<Word> words;
+    vector<Word> _words;
 };
 
 #endif
