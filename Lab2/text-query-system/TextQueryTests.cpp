@@ -30,40 +30,40 @@ TEST(Word, canIdentifyNonIdenticalWords) {
 	EXPECT_FALSE(word1 == word2);
 }
 
-
 TEST(Word, ignoresCaseWhenComparedWithAnotherWord) {
 	Word uppercase_word(UPPERCASE);
 	Word lowercase_word(LOWERCASE);
 	EXPECT_TRUE(lowercase_word == uppercase_word);
 }
-//
+
 TEST(Word, ignoresPunctuationWhenComparedWithAnotherWord) {
 	Word word_with_punct(PUNCTUATION + "hel" + PUNCTUATION + "lo" + PUNCTUATION);
 	Word word_without_punct("hello");
 	EXPECT_TRUE(word_without_punct == word_with_punct);
 }
-//
+
 TEST(Word, throwsAnExceptionIfItConsistsSolelyOfPunctuation) {
 	EXPECT_THROW({Word testword("!@#$%");}, WordContainsNoLetters);
 }
-//
+
 TEST(Word, throwsAnExceptionIfItContainsASpace) {
 	EXPECT_THROW({Word testword("hello there");}, WordContainsSpace);
 }
 
-//TEST(Word, isQueryableIfGreaterThanOrEqualToASpecifiedSize) {
-//	string test_string;
-//	test_string.resize(MIN_SIZE_FOR_QUERY, 'a');
-//	Word test_word(test_string);
-//	EXPECT_TRUE(test_word.isQueryable());
-//}
-//
-//TEST(Word, isNotQueryableIfLessThanASpecifiedSize) {
-//// Write this test...
-//}
-//
-//// ----------------------------------------------------
-//
+TEST(Word, isQueryableIfGreaterThanOrEqualToASpecifiedSize) {
+	string test_string;
+	test_string.resize(MIN_SIZE_FOR_QUERY, 'a');
+	Word test_word(test_string);
+	EXPECT_TRUE(test_word.isQueryable());
+}
+
+TEST(Word, isNotQueryableIfLessThanASpecifiedSize) {
+    string test_string;
+    test_string = "ab"; //String length = 2 (therefore < 3)
+    Word test_word(test_string);
+    EXPECT_FALSE(test_word.isQueryable());
+}
+
 //// Test null case first - here, an empty line
 TEST(Line, cannotFindWordInEmptyLine) {
    Line testline("");
