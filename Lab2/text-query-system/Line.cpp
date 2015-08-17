@@ -23,7 +23,7 @@ bool Line::contains(const Word& search_word) const
         return false;
     }
     
-	for (auto word : _words) {
+	for (const auto& word : _words) {
         if (word == search_word) {
             return true;
         }
