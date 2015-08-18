@@ -1,0 +1,6 @@
+Capacity is the number of elements the vector is able to store (memory has been allocated). Size is the number of elements that have been added to the vector.
+When size equals capacity, the capacity doubles which is why capacity is a power of 2.
+
+
+
+At the moment the line number is only shown once (even if the word is repeated). No major changes to the design would have to be made, only small interface changes

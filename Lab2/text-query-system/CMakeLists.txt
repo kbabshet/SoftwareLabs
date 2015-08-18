@@ -18,8 +18,8 @@ set(CMAKE_CXX_FLAGS "-g -Wall --std=gnu++14")
 # Normal Libraries & Executables
 ################################
 add_library(text-query-system_lib Line.cpp Word.cpp Paragraph.cpp)
-#add_executable(text-query-system FileReader.cpp)
-#target_link_libraries(TestGTest TestGTest_lib)
+add_executable(text-query-system main.cpp FileReader.cpp)
+target_link_libraries(text-query-system text-query-system_lib)
 # Key idea: SEPARATE OUT your main() function into its own file so it can be its
 # own executable. Separating out main() means you can add this library to be
 # used elsewhere.
@@ -42,7 +42,7 @@ if (test)
   ##############
   # Unit Tests
   ##############
-  add_executable(runUnitTests TextQueryTests.cpp)
+  add_executable(runUnitTests TextQueryTests.cpp FileReader.cpp)
 
   # Standard linking to gtest stuff.
   target_link_libraries(runUnitTests gtest gtest_main)
